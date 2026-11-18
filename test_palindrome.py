@@ -1,14 +1,13 @@
-import sys
+from palindrome import palindrome
 
-def palindrome(num):
-    rev = num[::-1]
+def test_palindrome():
+    result = palindrome("madam")
+    assert result == "Palindrome"
 
-    if num == rev:
-        return "Palindrome"
-    else:
-        return "Not Palindrome"
+def test_not_palindrome():
+    result = palindrome("hello")
+    assert result == "Not Palindrome"
 
-if __name__ == "__main__":
-    num = sys.argv[1]
-    result = palindrome(num)
-    print(result)
+def test_number_palindrome():
+    result = palindrome("121")
+    assert result == "Palindrome"
